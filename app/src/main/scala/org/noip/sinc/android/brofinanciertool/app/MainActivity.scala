@@ -1,22 +1,26 @@
 package org.noip.sinc.android.brofinanciertool.app
 
-import android.app.Activity
-import android.os.Bundle
-import android.view.{Menu, MenuItem}
+import org.scaloid.common._
+import android.graphics.Color
 
-class MainActivity extends Activity {
-  override def onCreate(savedInstanceState: Bundle) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-  }
+class MainActivity extends SActivity {
+  lazy val meToo = new STextView("Me too")
 
-  override def onCreateOptionsMenu(menu: Menu) = {
-    getMenuInflater.inflate(R.menu.menu_main, menu)
-    true
-  }
-
-  override def onOptionsItemSelected(item: MenuItem) = {
-    val id = item.getItemId
-    id == R.id.action_settings || super.onOptionsItemSelected(item)
+  onCreate {
+    contentView = new SVerticalLayout {
+      style {
+        case b: SButton => b.textColor(Color.RED).onClick(meToo.text = "PRESSED")
+        case t: STextView => t textSize 10.dip
+        case e: SEditText => e.backgroundColor(Color.YELLOW).textColor(Color.BLACK)
+      }
+      STextView("I am 10 dip tall")
+      meToo.here
+      STextView("I am 15 dip tall") textSize 15.dip // overriding
+      new SLinearLayout {
+        STextView("Button: ")
+        SButton(R.string.red)
+      }.wrap.here
+      SEditText("Yellow input field fills the space").fill
+    } padding 20.dip
   }
 }
