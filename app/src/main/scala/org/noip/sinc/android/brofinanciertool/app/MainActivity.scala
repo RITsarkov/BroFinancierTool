@@ -1,26 +1,12 @@
 package org.noip.sinc.android.brofinanciertool.app
 
+import org.noip.sinc.android.brofinanciertool.domain.context.AppContext
 import org.scaloid.common._
-import android.graphics.Color
 
-class MainActivity extends SActivity {
-  lazy val meToo = new STextView("Me too")
-
+class MainActivity extends SActivity with AppContext {
   onCreate {
-    contentView = new SVerticalLayout {
-      style {
-        case b: SButton => b.textColor(Color.RED).onClick(meToo.text = "PRESSED")
-        case t: STextView => t textSize 10.dip
-        case e: SEditText => e.backgroundColor(Color.YELLOW).textColor(Color.BLACK)
-      }
-      STextView("I am 10 dip tall")
-      meToo.here
-      STextView("I am 15 dip tall") textSize 15.dip // overriding
-      new SLinearLayout {
-        STextView("Button: ")
-        SButton(R.string.red)
-      }.wrap.here
-      SEditText("Yellow input field fills the space").fill
-    } padding 20.dip
+    contentView = new SFrameLayout {
+      SListView() adapter SArrayAdapter(data.groupNames) onItemClick toast("Hello")
+    }
   }
 }
