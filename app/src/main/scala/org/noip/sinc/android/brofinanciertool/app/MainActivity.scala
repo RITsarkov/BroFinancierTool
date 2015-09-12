@@ -1,5 +1,6 @@
 package org.noip.sinc.android.brofinanciertool.app
 
+import android.content.Intent
 import android.view.View
 import android.widget.{AdapterView, TextView}
 import org.noip.sinc.android.brofinanciertool.domain.context.AppContext
@@ -16,6 +17,6 @@ class MainActivity extends SActivity with AppContext {
   lazy val listener: (AdapterView[_], View, Int, Long) => Unit = show
 
   def show(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
-    SIntent[PartyMembersActivity].put(view.asInstanceOf[TextView].text).start
+    new Intent().put(view.asInstanceOf[TextView].text).start[PartyMembersActivity]
   }
 }
