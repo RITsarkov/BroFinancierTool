@@ -6,7 +6,7 @@ import org.noip.sinc.android.brofinanciertool.domain.MockData
  * Application context
  */
 trait AppContext {
-  val GroupName = "GroupName"
+  val PartyName = "PartyName"
 
   def data = MockData
 }

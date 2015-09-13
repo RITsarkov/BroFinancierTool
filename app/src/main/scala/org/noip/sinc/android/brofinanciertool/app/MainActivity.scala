@@ -10,13 +10,13 @@ class MainActivity extends SActivity with AppContext {
   onCreate {
     contentView = new SVerticalLayout() {
       STextView(R.string.parties) textSize 25.sp
-      SListView() adapter SArrayAdapter(data.groupNames) onItemClick listener
+      SListView() adapter SArrayAdapter(data.partyNames) onItemClick listener
     } padding 16.sp
   }
 
   lazy val listener: (AdapterView[_], View, Int, Long) => Unit = show
 
   def show(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
-    new Intent().putExtra(GroupName, view.asInstanceOf[TextView].text).start[PartyMembersActivity]
+    new Intent().putExtra(PartyName, view.asInstanceOf[TextView].text).start[PartyMembersActivity]
   }
 }

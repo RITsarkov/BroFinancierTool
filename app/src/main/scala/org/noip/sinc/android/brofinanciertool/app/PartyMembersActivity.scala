@@ -8,12 +8,13 @@ import org.scaloid.common._
  */
 class PartyMembersActivity extends SActivity with AppContext {
 
-  lazy val party = data groupsByName {intent map (_.getStringExtra(GroupName)) get}
+  //todo use ID
+  lazy val party = data partiesByName {(intent map (_.getStringExtra(PartyName))).get}
 
   onCreate {
     contentView = new SVerticalLayout() {
       STextView(R.string.party_members) textSize 25.sp
-      SListView() adapter SArrayAdapter(data groupMemberNames party)
+      SListView() adapter SArrayAdapter(data partyMemberNames party)
     } padding 16.sp
   }
 }

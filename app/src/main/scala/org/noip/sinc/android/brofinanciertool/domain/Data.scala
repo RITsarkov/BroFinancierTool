@@ -1,11 +1,11 @@
 package org.noip.sinc.android.brofinanciertool.domain
 
 trait Data {
-  def groups: Seq[Group]
+  def parties: Seq[Party]
 
-  def groupNames = groups map (_.name) toArray
+  def partyNames: Array[String] = (parties map (_.name)).toArray
 
-  def groupMemberNames(group: Group) = group.members map (_.name) toArray
+  def partyMemberNames(party: Party): Array[String] = (party.members map (_.name)).toArray
 
-  lazy val groupsByName = (groupNames zip groups).toMap
+  def partiesByName: Map[String, Party] = (partyNames zip parties).toMap
 }
