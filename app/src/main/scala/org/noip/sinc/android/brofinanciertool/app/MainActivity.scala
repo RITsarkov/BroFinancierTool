@@ -17,6 +17,6 @@ class MainActivity extends SActivity with AppContext {
   lazy val listener: (AdapterView[_], View, Int, Long) => Unit = show
 
   def show(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
-    new Intent().put(view.asInstanceOf[TextView].text).start[PartyMembersActivity]
+    new Intent().putExtra(GroupName, view.asInstanceOf[TextView].text).start[PartyMembersActivity]
   }
 }
