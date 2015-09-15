@@ -34,10 +34,6 @@ android {
             minifyEnabled true
             proguardFile file("proguard-rules.txt")
         }
-//        release {
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
     }
 }
 
