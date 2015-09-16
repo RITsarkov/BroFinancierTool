@@ -34,10 +34,6 @@ android {
             minifyEnabled true
             proguardFile file("proguard-rules.txt")
         }
-//        release {
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
     }
 }
 
@@ -45,6 +41,9 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.scala-lang:scala-library:2.11.7"
     compile "org.scaloid:scaloid_2.11:4.0"
+
+    compile 'junit:junit:4.12'
+    compile 'org.scalatest:scalatest_2.11:3.0.0-M9'
 }
 
 //tasks.withType(ScalaCompile) {
