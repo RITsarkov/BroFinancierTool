@@ -14,4 +14,9 @@ android:
     - android-22
     - extra
 
+recipes:
+  - java
+  - gradle::tarball
+  - android-sdk
+
 test: testRelease
