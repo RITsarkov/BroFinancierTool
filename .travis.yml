@@ -11,5 +11,7 @@ jdk: oraclejdk8
 android:
   components:
     - build-tools-23.0.1
+    - android-22
+    - extra
 
 test: testRelease
