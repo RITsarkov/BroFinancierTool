@@ -27,13 +27,16 @@ android {
     }
     buildTypes {
         debug {
-            minifyEnabled true
-            proguardFile file("proguard-rules.txt")
+            debuggable true
         }
         release {
             minifyEnabled true
             proguardFile file("proguard-rules.txt")
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
