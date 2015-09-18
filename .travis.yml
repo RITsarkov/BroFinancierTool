@@ -19,4 +19,4 @@ recipes:
   - gradle::tarball
   - android-sdk
 
-test: testRelease
+test: ./gradlew build testRelease
