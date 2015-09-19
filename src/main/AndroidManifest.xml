@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.noip.sinc.android.brofinanciertool.app" >
 
+    <uses-sdk android:targetSdkVersion="21" android:minSdkVersion="21"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
