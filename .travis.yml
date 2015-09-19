@@ -1,0 +1,20 @@
+language: scala
+scala:
+  - 2.11.7
+
+language: android
+jdk: oraclejdk8
+#env:
+#  matrix:
+#    - ANDROID_TARGET=android-22 ANDROID_ABI
+
+android:
+  components:
+    - build-tools-23.0.1
+    - android-22
+    - extra
+
+recipes:
+  - java
+  - gradle::tarball
+  - android-sdk
