@@ -18,5 +18,3 @@ recipes:
   - java
   - gradle::tarball
   - android-sdk
-
-test: ./gradlew build testRelease
