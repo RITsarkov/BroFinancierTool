@@ -32,7 +32,7 @@ android:
     - android-22
     - extra
 
-recipes:
-  - android-sdk
+#recipes:
+#  - android-sdk
 
 script: sbt android:package && sbt test
