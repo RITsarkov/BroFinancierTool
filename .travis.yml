@@ -3,7 +3,7 @@ scala:
   - 2.11.7
 
 language: android
-jdk: oraclejdk8
+jdk: oraclejdk7
 
 android:
   components:
