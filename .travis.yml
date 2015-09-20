@@ -4,26 +4,14 @@ scala:
 
 jdk: oraclejdk7
 
-#before_install:
-#  # Install base Android SDK
-#  - sudo apt-get update -qq
-#  - sudo apt-get install -qq libstdc++6:i386 lib32z1 expect
-#  - export COMPONENTS=build-tools-23.0.1,android-22,sysimg-22,extra-android-support
-#  - curl -3L https://raw.github.com/embarkmobile/android-sdk-installer/version-2/android-sdk-installer | bash /dev/stdin --install=$COMPONENTS
-#  - source ~/.android-sdk-installer/env
-#
-#  # Install required Android components
-#  - android update sdk --filter platform-tools,android-22,extra-android-support --no-ui --force
-
-#before_install:
-# - export ANDROID_HOME=$PWD/android-sdk-linux
-#    # Install base Android SDK
-#    - sudo apt-get update -qq
-#    - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
-#    - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
-#    - tar xzf android-sdk_r21.0.1-linux.tgz
-#    - export ANDROID_HOME=$PWD/android-sdk-linux
-#    - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+before_install:
+  # Install base Android SDK
+  - sudo apt-get update -qq
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
+  - wget http://dl.google.com/android/android-sdk_r22.0.1-linux.tgz
+  - tar xzf android-sdk_r22.0.1-linux.tgz
+  - export ANDROID_HOME=$PWD/android-sdk-linux
+  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 #android:
 #  components:
@@ -34,9 +22,7 @@ jdk: oraclejdk7
 #recipes:
 #  - android-sdk
 
-before_install:
-  - android-update-sdk --components=build-tools-23.0.1
-  - android-update-sdk --components=android-22
-  - android-update-sdk --components=extra
-
-script: sbt android:package && sbt test
+#before_install:
+#  - android-update-sdk --components=build-tools-23.0.1
+#  - android-update-sdk --components=android-22
+#  - android-update-sdk --components=extra
