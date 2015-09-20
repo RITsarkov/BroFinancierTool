@@ -2,6 +2,7 @@ language: scala
 scala:
   - 2.11.7
 
+language: android
 jdk: oraclejdk7
 
 #before_install:
@@ -15,8 +16,8 @@ jdk: oraclejdk7
 #  # Install required Android components
 #  - android update sdk --filter platform-tools,android-22,extra-android-support --no-ui --force
 
-before_install:
- - export ANDROID_HOME=$PWD/android-sdk-linux
+#before_install:
+# - export ANDROID_HOME=$PWD/android-sdk-linux
 #    # Install base Android SDK
 #    - sudo apt-get update -qq
 #    - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
@@ -33,5 +34,5 @@ android:
 
 recipes:
   - android-sdk
-#  - java
-#  - sbt
+
+script: sbt android:package && sbt test
