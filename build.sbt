@@ -13,7 +13,7 @@ proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattr
 )
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.4" % "test"
+  "org.scalatest" %% "scalatest" % "2.2.5" % "test"
   ,"org.scaloid" %% "scaloid" % "4.0"
   ,"net.sf.proguard" % "proguard-base" % "5.1"
 )
