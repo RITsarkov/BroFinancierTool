@@ -4,9 +4,6 @@ scala:
 
 language: android
 jdk: oraclejdk8
-#env:
-#  matrix:
-#    - ANDROID_TARGET=android-22 ANDROID_ABI
 
 android:
   components:
@@ -16,5 +13,4 @@ android:
 
 recipes:
   - java
-  - gradle::tarball
   - android-sdk
