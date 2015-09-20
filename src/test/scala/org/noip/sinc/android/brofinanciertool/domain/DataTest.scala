@@ -6,7 +6,8 @@ import org.scalatest._
 
 class DataTest extends org.scalatest.FlatSpec with Matchers {
 
-  "Operation" should "transfer from different balances" in {
+
+  "Transfer from different balances" should "" in {
     a [IllegalArgumentException] should be thrownBy {
       transfer(Balance(roma), Balance(roma), 10)
     }

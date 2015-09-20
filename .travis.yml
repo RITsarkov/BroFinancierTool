@@ -2,8 +2,8 @@ language: scala
 scala:
   - 2.11.7
 
-language: android
-jdk: oraclejdk7
+#language: android
+#jdk: oraclejdk7
 
 android:
   components:
@@ -11,6 +11,7 @@ android:
     - android-22
     - extra
 
-recipes:
-  - java
-  - android-sdk
+#recipes:
+#  - java
+#  - android-sdk
+#  - sbt
