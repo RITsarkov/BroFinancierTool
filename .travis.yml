@@ -18,8 +18,7 @@ before_install:
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
   # Install required Android components.
-  - echo y | android update sdk --filter build-tools,extra-android-support,$ANDROID_SDK --no-ui --force
-
+  - echo y | android update sdk --filter build-tools-23.0.1,extra-android-support,$ANDROID_SDK --no-ui --force
 #android:
 #  components:
 #    - build-tools-23.0.1
