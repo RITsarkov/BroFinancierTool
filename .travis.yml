@@ -31,8 +31,7 @@ android:
     - android-22
     - extra
 
-
-#recipes:
-#  - android-sdk
+recipes:
+  - android-sdk
 #  - java
 #  - sbt
