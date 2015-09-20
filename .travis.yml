@@ -2,7 +2,6 @@ language: scala
 scala:
   - 2.11.7
 
-language: android
 jdk: oraclejdk7
 
 #before_install:
@@ -26,13 +25,18 @@ jdk: oraclejdk7
 #    - export ANDROID_HOME=$PWD/android-sdk-linux
 #    - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
-android:
-  components:
-    - build-tools-23.0.1
-    - android-22
-    - extra
+#android:
+#  components:
+#    - build-tools-23.0.1
+#    - android-22
+#    - extra
 
 #recipes:
 #  - android-sdk
+
+before_install:
+  - android-update-sdk --components=build-tools-23.0.1
+  - android-update-sdk --components=android-22
+  - android-update-sdk --components=extra
 
 script: sbt android:package && sbt test
