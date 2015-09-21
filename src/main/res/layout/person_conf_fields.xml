@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/person_conf_header"
+            android:id="@+id/persConfHeader" android:layout_margin="10dp"/>
+    <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView android:layout_width="150dp" android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/person_conf_name"
+                  android:id="@+id/nameText" android:background="@color/AndroidGreen" android:layout_margin="1dp"
+                  android:layout_column="0" android:gravity="right" android:layout_row="0" android:padding="2dp"/>
+        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:inputType="textPersonName|text" android:text="@string/person_conf_neme_editor_phrase" android:ems="10"
+                  android:id="@+id/NameTextField" android:layout_column="1" android:layout_margin="1dp"
+                  android:autoText="false" android:enabled="true" android:gravity="left"
+                  android:linksClickable="false"/>
+        <TextView android:layout_width="150dp" android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/person_conf_sex"
+                  android:id="@+id/sexText" android:background="@color/AndroidGreen" android:layout_margin="1dp" android:padding="2dp"
+                  android:layout_column="0" android:gravity="right" android:layout_row="1"/>
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/sexRbGroup"
+                android:layout_row="1" android:layout_column="1" android:layout_gravity="center_horizontal">
+            <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/person_conf_sex_male"
+                    android:id="@+id/saxRadioButtonM" android:checked="false"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:text="@string/person_conf_sex_female" android:id="@+id/saxRadioButtonF"
+                         android:checked="false"/>
+        </RadioGroup>
+    </GridLayout>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="20dp">
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/main_cancel"
+                android:id="@+id/cancelButton" android:layout_gravity="right" android:layout_marginRight="20dp"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_ok"
+                android:id="@+id/okButton" android:layout_marginLeft="20dp"/>
+    </FrameLayout>
+</LinearLayout>
+
