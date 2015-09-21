@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Bro Financier Tool</string>
 
+    <string name="main_ok">ok</string>
+    <string name="main_cancel">Cancel</string>
+
     <string name="parties">Parties</string>
     <string name="party_members">Party members</string>
+
+    <string name="person_conf_name">Name</string>
+    <string name="person_conf_sex">Sex</string>
+    <string name="person_conf_sex_male">M</string>
+    <string name="person_conf_sex_female">F</string>
+    <string name="person_conf_header">Person configuration</string>
+    <string name="person_conf_neme_editor_phrase">enter party member name</string>
+
 </resources>
