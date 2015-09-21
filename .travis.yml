@@ -2,19 +2,33 @@ language: scala
 scala:
   - 2.11.7
 
-language: android
-jdk: oraclejdk8
-#env:
-#  matrix:
-#    - ANDROID_TARGET=android-22 ANDROID_ABI
+jdk: oraclejdk7
 
-android:
-  components:
-    - build-tools-23.0.1
-    - android-22
-    - extra
+env:
+  global:
+    - ANDROID_SDK=android-22
 
-recipes:
-  - java
-  - gradle::tarball
-  - android-sdk
+before_install:
+ # Install base Android SDK
+  - sudo apt-get update -qq
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch; fi
+  - wget http://dl.google.com/android/android-sdk_r23.0.1-linux.tgz
+  - tar xzf android-sdk_r23.0.1-linux.tgz
+  - export ANDROID_HOME=$PWD/android-sdk-linux
+  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+  # Install required Android components.
+  - echo y | android update sdk --filter build-tools-23.0.1,extra-android-support,$ANDROID_SDK --no-ui --force
+#android:
+#  components:
+#    - build-tools-23.0.1
+#    - android-22
+#    - extra
+
+#recipes:
+#  - android-sdk
+
+#before_install:
+#  - android-update-sdk --components=build-tools-23.0.1
+#  - android-update-sdk --components=android-22
+#  - android-update-sdk --components=extra

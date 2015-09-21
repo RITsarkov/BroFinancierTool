@@ -1,7 +1,5 @@
 name := "Bro Financier Tool"
 
-//import android.Keys._
-//android.Plugin.androidBuild
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 scalaVersion := "2.11.7"
 scalacOptions in Compile += "-feature"
@@ -13,12 +11,10 @@ proguardOptions in Android ++= Seq("-dontobfuscate", "-dontoptimize", "-keepattr
 )
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.2.4" % "test"
-  ,"org.scaloid" %% "scaloid" % "4.0"
+  "org.scalatest" %% "scalatest" % "2.2.5" % "test" withSources() withJavadoc()
+  ,"org.scaloid" %% "scaloid" % "4.0" withSources() withJavadoc()
   ,"net.sf.proguard" % "proguard-base" % "5.1"
 )
 
 run <<= run in Android
 install <<= install in Android
-
-//retrolambdaEnable in Android := false // turning it on significantly increases the build time
